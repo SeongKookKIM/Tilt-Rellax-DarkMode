@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reallax</title>
+    <style>
+      .wrapper {
+        width: 100%;
+        height: 200vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      div {
+        font-size: 5rem;
+        font-weight: bold;
+      }
+      .darkmode--activated div {
+        color: white;
+      }
+      .darkmode-toggle {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="rellax">I’m that default chill speed of "-2"</div>
+      <div class="rellax" data-rellax-speed="7">I’m super fast!!</div>
+      <div class="rellax" data-rellax-speed="-4">I’m extra slow and smooth</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+
+    <script>
+      // Also can pass in optional settings block
+      var rellax = new Rellax(".rellax", {
+        speed: -2,
+        center: false,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false,
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        const options = {
+          top: "64px", // default: '32px'
+          right: "32px", // default: '32px'
+          left: "unset", // default: 'unset'
+          time: "0.5s", // default: '0.3s'
+          mixColor: "#fff", // default: '#fff'
+          backgroundColor: "#fff", // default: '#fff'
+          buttonColorDark: "#100f2c", // default: '#100f2c'
+          buttonColorLight: "#fff", // default: '#fff'
+          saveInCookies: false, // default: true,
+          label: "🌓", // default: ''
+          autoMatchOsTheme: true, // default: true
+        };
+
+        new Darkmode(options).showWidget();
+      }
+      window.addEventListener("load", addDarkmodeWidget);
+    </script>
+  </body>
+</html>

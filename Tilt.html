@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tilts</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        overflow: hidden;
+      }
+      .wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
+        background-color: aqua;
+        transform-style: preserve-3d;
+      }
+      h1 {
+        font-size: 3.4vh;
+        margin: 0;
+        transition: 0.5s;
+      }
+      h1:hover {
+        scale: 1.5;
+      }
+      .title {
+        position: relative;
+        z-index: 2;
+        transform: translateZ(50px);
+      }
+      .credits {
+        font-size: 1.2vh;
+        letter-spacing: 0.05em;
+        opacity: 0.6;
+        transform: translateZ(80px);
+      }
+      .bg {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: url("https://images.unsplash.com/photo-1470350576089-539d5a852bf7?dpr=2&auto=format&fit=crop&w=1500&h=1001&q=80&cs=tinysrgb&crop=&bg=");
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1 class="title">Tilt Hover Effect</h1>
+      <p class="credits">Tilt.js by Gijs Rogé / Photo by Oliur Rahman</p>
+      <div class="bg"></div>
+    </div>
+    <script src="vanilla-til.js"></script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".wrap"), {
+        maxTilt: 1,
+        perspective: 1000,
+        easing: "cubic-bezier(.03,.98,.52,.99)",
+        speed: 50,
+        glare: false,
+        maxGlare: 0.2,
+        scale: 1.7,
+        reverse: true,
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!-- 
+⣿⣿⣿⣿⣿⣿⠿⢋⣥⣴⣶⣶⣶⣬⣙⠻⠟⣋⣭⣭⣭⣭⡙⠻⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⡿⢋⣴⣿⣿⠿⢟⣛⣛⣛⠿⢷⡹⣿⣿⣿⣿⣿⣿⣆⠹⣿⣿⣿⣿
+⣿⣿⣿⡿⢁⣾⣿⣿⣴⣿⣿⣿⣿⠿⠿⠷⠥⠱⣶⣶⣶⣶⡶⠮⠤⣌⡙⢿⣿
+⣿⡿⢛⡁⣾⣿⣿⣿⡿⢟⡫⢕⣪⡭⠥⢭⣭⣉⡂⣉⡒⣤⡭⡉⠩⣥⣰⠂⠹
+⡟⢠⣿⣱⣿⣿⣿⣏⣛⢲⣾⣿⠃⠄⠐⠈⣿⣿⣿⣿⣿⣿⠄⠁⠃⢸⣿⣿⡧
+⢠⣿⣿⣿⣿⣿⣿⣿⣿⣇⣊⠙⠳⠤⠤⠾⣟⠛⠍⣹⣛⣛⣢⣀⣠⣛⡯⢉⣰
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡶⠶⢒⣠⣼⣿⣿⣛⠻⠛⢛⣛⠉⣴⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡿⢛⡛⢿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡈⢿⣿
+⣿⣿⣿⣿⣿⣿⣿⠸⣿⡻⢷⣍⣛⠻⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢇⡘⣿
+⣿⣿⣿⣿⣿⣿⣿⣷⣝⠻⠶⣬⣍⣛⣛⠓⠶⠶⠶⠤⠬⠭⠤⠶⠶⠞⠛⣡⣿
+⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣬⣭⣍⣙⣛⣛⣛⠛⠛⠛⠿⠿⠿⠛⣠⣿⣿
+⣦⣈⠉⢛⠻⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⣁⣴⣾⣿⣿⣿⣿
+⣿⣿⣿⣶⣮⣭⣁⣒⣒⣒⠂⠠⠬⠭⠭⠭⢀⣀⣠⣄⡘⠿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡈⢿⣿⣿⣿⣿⣿⠀⠀                                                    
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: linear-gradient(to top, #fff1d3, #e03a79);
+        height: 100vh;
+        margin: 0;
+        background-size: 100%;
+        background-color: cover;
+        background-position: center;
+        transform: scale(1);
+        overflow: hidden;
+      }
+
+      #scene {
+        background-color: #00000033;
+        overflow: hidden;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .element {
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+      }
+
+      .mountain {
+        background-image: url("https://res.cloudinary.com/dqdpcvhvl/image/upload/v1618307870/parallex-sample/0_yb6foz.png");
+        height: 100vh;
+        background-size: calc(80% + 300px);
+        background-position: center calc(70% + 180px);
+      }
+
+      .tower {
+        background-image: url("https://res.cloudinary.com/dqdpcvhvl/image/upload/v1618307870/parallex-sample/3_vlxkht.png");
+        background-size: calc(220px + 20%);
+        background-position: right 83%;
+      }
+      .bridge {
+        background-image: url("https://res.cloudinary.com/dqdpcvhvl/image/upload/v1618307870/parallex-sample/2_ahdgno.png");
+        background-size: 100%;
+        background-position: center 80%;
+      }
+      .shade {
+        background-image: url("https://res.cloudinary.com/dqdpcvhvl/image/upload/v1618307872/parallex-sample/1_wgb3eo.png");
+        background-size: 100%;
+        background-position: center calc(70% + 120px);
+      }
+      .sun {
+        background-image: url("https://res.cloudinary.com/dqdpcvhvl/image/upload/v1618307870/parallex-sample/6_dl48qu.png");
+        background-size: calc(10% + 50px);
+        background-position: 20vw calc(30% - 8vw);
+      }
+
+      .grass-left {
+        background-image: url("https://res.cloudinary.com/dqdpcvhvl/image/upload/v1618307870/parallex-sample/4_hamrqg.png");
+        background-size: calc(100px + 10%);
+        background-position: 30% bottom;
+      }
+
+      .grass-right {
+        background-image: url("https://res.cloudinary.com/dqdpcvhvl/image/upload/v1618307869/parallex-sample/5_dtf1px.png");
+        background-size: calc(20px + 10%);
+        background-position: 50% bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scene" data-realative-input="true">
+      <div class="element mountain" data-depth-x="0.1" data-depth-y="0"></div>
+      <div class="element shade" data-depth-x="0.4" data-depth-y="0.1"></div>
+      <div class="element bridge" data-depth-x="0.7" data-depth-y="0.4"></div>
+      <div class="element tower" data-depth-x="0.8" data-depth-y="0.25"></div>
+      <div
+        class="element grass-left"
+        data-depth-x="0.9"
+        data-depth-y="0.3"
+      ></div>
+      <div
+        class="element grass-right"
+        data-depth-x="0.9"
+        data-depth-y="0.3"
+      ></div>
+      <div class="element sun" data-depth-x="0.3" data-depth-y="0.1"></div>
+    </div>
+
+    <!-- @@ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script>
+      const scene = document.querySelector("#scene");
+      const parallaxInstance = new Parallax(scene);
+    </script>
+  </body>
+</html>
